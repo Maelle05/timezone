@@ -1,0 +1,557 @@
+@import '../static/scss/utils/_font';
+@import '../static/scss/utils/_var';
+
+*,
+*::before,
+*::after {
+    user-select: none;
+    box-sizing: border-box;
+    // cursor: none; // si cursor custom
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    padding: 0;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: whitesmoke;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    outline: none;
+}
+
+////////////////////////////////// ALL ///////////////////////////
+
+#clock {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 140px;
+    z-index: 7;
+
+    p {
+        font-size: 58px;
+        line-height: 58px;
+        padding: 0 5px 0 5px;
+        font-family: 'Desolator';
+        font-weight: lighter;
+    }
+}
+
+//////////////////////////////// First page ///////////////////////////////
+
+.firstPage {
+    z-index: 5;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FFF5E5;
+    top: 0;
+
+    #bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        overflow: hidden;
+
+        .bg-ellipse {
+            position: absolute;
+            border-radius: 50% 50%;
+            background-color: #ffeccd;
+            filter: blur(14.5rem);
+            z-index: 5;
+        }
+    }
+
+    .bgBruit {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('/static/img/bgBruit.png');
+        background-size: cover;
+        opacity: 1;
+        z-index: 7;
+    }
+
+    h1 {
+        width: 100vw;
+        text-align: center;
+        font-size: 88px;
+        line-height: 88px;
+        margin-top: 40%;
+        font-family: 'Desolator-Bold';
+        z-index: 7;
+    }
+    .sudtitle{
+        width: 100vw;
+        text-align: center;
+        font-size: 48px;
+        line-height: 48px;    
+        margin-top: 4%;
+        font-family: 'Desolator';
+        z-index: 7;
+    }
+
+    .formUsername {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+        z-index: 7;
+    
+        input {
+            width: 70vw;
+            height: 80px;
+            border-radius: 30px;
+            font-size: 38px;
+            text-align: center;
+            font-family: 'Desolator';
+            background-color: #FFFDFA66;
+        }
+
+        svg {
+            position: absolute;
+            bottom: 4%;
+            right: 15%;
+        }
+    }
+}
+
+////////////////////////////////// HOME /////////////////////////////////////////
+
+.homeContainer{
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+
+    .outer-wrapper {
+        width: 100vh;
+        height: 100vw;
+        transform: rotate(-90deg) translateX(-100vh);
+        transform-origin: top left;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: absolute;
+        z-index: 2;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 400vw;
+            transform: rotate(90deg) translateY(-100vh);
+            transform-origin: top left;
+            overflow-y: hidden;
+
+            .slide {
+                width: 100vw;
+                height: 100vh;
+                z-index: 2;
+                position: relative;
+
+                #bg {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    z-index: -1;
+                    overflow: hidden;
+
+                    &::after {
+                        content:"";
+                        position: absolute;
+                        width:100vw;
+                        height: 100vh;
+                        background-image: url('/static/img/bgBruit.png');
+                        background-size: cover;
+                        z-index: 2;
+                        opacity: 0.6;
+                    }
+            
+                    .bg-ellipse {
+                        position: absolute;
+                        border-radius: 50% 20%;
+                        z-index: 2;
+                        filter: blur(14.5rem);
+                        opacity: 0.8;
+                    }
+                }
+
+                &.one {
+                    background: #FCE2CB;
+                }
+            
+                &.two {
+                    background: #3973BC;
+                }
+            
+                &.three {
+                    background: #6091e1;
+                }
+            
+                &.four {
+                    background: #F5CAB5;
+                }
+
+                svg {
+                    position: absolute;
+                    overflow: inherit;
+                    &.contOrbites {
+                        width : 320px;
+                        top: 42%;
+                        left: 43%;
+                    }
+                    &.contStar {
+                        width: 274px;
+                        top: 22%;
+                        left: 55%;
+                    }
+                    &.planet {
+                        width: 274px;
+                        top: 16%;
+                        left: 63%;
+                    }
+                    &.contOrbitStar {
+                        width: 133px;
+                        top: 70%;
+                        left: 10%;
+                    }
+                    &.contOrbitesAsian{
+                        width: 393px;
+                        top: 41%;
+                        left: 28%;
+                    }
+                    &.starAsian {
+                        width: 94px;
+                        top: 41%;
+                        left: 61%;
+                    }
+                    &.contStarAsian {
+                        width: 143px;
+                        top: 70%;
+                        left: 12%;
+                    }
+                    &.contPlanetStarAsian {
+                        width: 274px;
+                        top: 14%;
+                        left: 59%;
+                    }
+                    &.contsvgAmerica {
+                        width: 574px;
+                        top: 43%;
+                        left: 17%;
+                    }
+                    &.contSvgAfrica {
+                        width: 84%;
+                        top: 16%;
+                        left: 11%;
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        width: 100vw;
+        text-align: center;
+        margin-top: 60%;
+        font-size: 78px;
+        line-height: 78px;
+        font-family: 'Desolator';
+        font-weight: 300;
+        z-index: 4;
+    }
+
+    p {
+        z-index: 4;
+        &.btn {
+            text-align: center;
+            font-size: 58px;
+            margin-top: 60%;
+            font-family: 'Desolator-Bold';
+        }
+
+        &.title {
+            text-align: center;
+            font-size: 38px;
+            margin-top: 8%;
+            font-family: 'Desolator-Light';
+            font-weight: lighter;
+        }
+    }
+}
+
+/////////////////////////////// CHAT ///////////////////////////////
+
+.chatContainer {
+    z-index: 0;
+    font-family: 'Desolator';
+    font-weight: lighter;
+
+    #bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        background-color: #FCE2CB;
+
+
+        &::after {
+            content:"";
+            position: absolute;
+            width:100vw;
+            height: 100vh;
+            background-image: url('/static/img/bgBruit.png');
+            background-size: cover;
+            z-index: 2;
+            opacity: 0.6;
+        }
+
+        div{
+            &.bg-ellipse {
+                position: absolute;
+                border-radius: 50% 50%;
+                background-color: #6091e1;
+                filter: blur(14.5rem);
+
+                &:last-child {
+                    background-color: #e89188;
+                }
+                &:first-child {
+                    background-color: #e6a59e;
+                }
+            }
+        }
+    }
+    
+    #userContainer {
+        position: absolute;
+        top: 0;
+        overflow-y: scroll;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        display: none;
+
+        svg {
+            margin: 40px 0 0 40px;
+            padding: 8px 0 19px 0;
+        }
+
+        .line {
+            width: 100vw;
+            border-top: 1px solid #000000;
+            margin-top: 20px;
+            font-family: 'Desolator';
+        }
+
+        h2 {
+            margin-top: 17%;
+            margin-bottom: 10%;
+            font-size: 48px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 22px;
+            text-align: center;
+            margin-top: 12px;
+            font-family: 'Desolator-Light';
+        }
+
+        .skip {
+            font-family: 'Desolator-Bold';
+            margin: 10% 0;
+            font-size: 48px;
+        }
+
+        .icones {
+            position: fixed;
+            bottom: 40px;
+            right: -137px;
+
+            svg {
+                z-index: 2;
+                width: 27%;
+            }
+        }
+    }
+
+    .main {
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 9vw 0 40px;
+            align-items: center;
+            height: 9vh;
+            border-bottom: solid 1px #000000;
+
+            p {
+                font-size: 23px;
+                font-family: 'Desolator-Light';
+            }
+    
+            #online {
+                width: 21%;
+            }
+        }
+        .chat {
+            width: 100vw;
+            #messagesContainer {
+                overflow-y: scroll;
+                padding: 10px 10px 10px 10px;
+                border-radius: 10px;
+                height: 80vh;
+                padding: 0 60px;
+
+                .contenerMessage {
+                    position: relative;
+                    margin-top: 30px;
+                }
+
+                p {
+                    border: solid 1px #000000;
+                    padding: 30px 50px;
+                    margin-bottom: 10px;
+                    border-radius: 40px;
+                    font-size: 28px;
+                    word-break: break-word;
+                    width: 70vw;
+                    background-color: #FFFDFA56;
+                    max-width: fit-content;
+
+                    &::before{
+                        content: '';
+                        position:absolute; 
+                        left: 0;
+                        width: 100px;
+                        height: 73px;
+                        bottom: -1px;
+                        background-image: url('/static/img/pinsMes2.png');
+                        background-size: cover;
+                    }
+                }
+
+                span {
+                    font-size: 10px;
+                }
+    
+                .contenerMessageMe {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    position: relative;
+                    margin-top: 30px;
+
+                    span {
+                        font-size: 25px;
+                    }
+                }
+        
+                .myMessages {
+                    text-align: right;
+                    &::before {
+                        display: none;
+                    }
+
+                    &::after{
+                        content: '';
+                        position:absolute; 
+                        right: 0;
+                        width: 100px;
+                        height: 73px;
+                        bottom: 9.5px;
+                        background-image: url('/static/img/pinsMes2.png');
+                        background-size: cover;
+                        transform: scaleX(-1);
+                    }
+                }
+
+            }
+    
+            #formMessage {
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5px;
+                width: 100vw;
+                height: 10vh;
+                border-top: 1px solid;
+        
+                #inputMessage {
+                    width: 70vw;
+                    height: 5vh;
+                    font-size: 28px;
+                    border-radius: 50px;
+                    text-align: center;
+                    margin-right: 6vw;
+                    background-color: #FFFDFA96;
+                }
+            }
+        }
+    }
+}
+
+/////////////////////////////// RESPONCIVE //////////////////////
+
+// @media (min-width: 425px)
+// {
+//     .homeContainer {
+//         .static {
+//             // padding: 0 35vw 0 35vw;
+//             // background-color: red;
+//         }
+//     }
+// }
